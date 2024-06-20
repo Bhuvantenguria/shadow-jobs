@@ -4,8 +4,10 @@ import { AlignJustify } from "lucide-react";
 import { Button } from "../ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import Link from "next/link";
+import { UserButton } from "@clerk/nextjs";
 
-function Header(){
+function Header({user}){
+    console.log(!user)
 
     const menuItems = [
         {
@@ -16,13 +18,34 @@ function Header(){
         {
             label : 'Log-In',
             path : '/sign-in',
-            show :true
+            show : !user,
         },
         {
             label : 'Register',
             path : '/sign-up',
-            show :true
+            show : !user,
         },
+        {
+            label : 'Jobs',
+            path : '/jobs',
+            show : user,
+        },
+        {
+            label : 'Activity',
+            path : '/activity',
+            show : user,
+        },
+        {
+            label : 'Membership',
+            path : '/membership',
+            show : user,
+        },
+        {
+            label : 'Account',
+            path : '/account',
+            show : user,
+        }
+
     ]
 
     return (
@@ -49,6 +72,7 @@ function Header(){
                                 )
                             }
                         </div>
+                        <UserButton afterSignOutUrl="/" />
                     </SheetContent>
                 </Sheet>
 
@@ -63,6 +87,7 @@ function Header(){
                             : null
                         )
                     }
+                    <UserButton afterSignOutUrl="/" />
                 </nav>
                 
             </header>
