@@ -3,15 +3,29 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useState } from "react";
 import CommonForm from "../commonForm";
-import { candidateOnboardFormControls, initialCandidateAccountFormData, initialRecruiterFormData, recruiterOnboardFormControls } from "@/utils";
+import { candidateOnboardFormControls, initialCandidateAccountFormData, initialCandidateFormData, initialRecruiterFormData, recruiterOnboardFormControls } from "@/utils";
 
 function OnBoard(){
     const [currentTab , setCurrentTab] = useState('candidate');
     const [recruiterFormData, setRecruiterFormData] = useState(initialRecruiterFormData);
-    const [candidateFormData, setCandidateFormData] = useState(initialCandidateAccountFormData);
+    const [candidateFormData, setCandidateFormData] = useState(initialCandidateFormData);
     function handleChange(val){
         setCurrentTab(val);
     }
+    function handleRecuiterFormValid() {
+        return (
+          recruiterFormData &&
+          recruiterFormData.name.trim() !== "" &&
+          recruiterFormData.companyName.trim() !== "" &&
+          recruiterFormData.companyRole.trim() !== ""
+        );
+      }
+    
+      function handleCandidateFormValid() {
+        return Object.keys(candidateFormData).every(
+          (key) => candidateFormData[key].trim() !== ""
+        );
+      }
     return (
         <div className="bg-white">
             <Tabs value={currentTab} onValueChange={handleChange}>
@@ -29,14 +43,16 @@ function OnBoard(){
                     formControls={candidateOnboardFormControls}
                     buttonText={'Onboard as Candidate'}
                     formData={candidateFormData}
-                    setFormData={setCandidateFormData} />
+                    setFormData={setCandidateFormData} 
+                    isBtnDisabled={!handleCandidateFormValid()}/>
                 </TabsContent>
                 <TabsContent value="recruiter">
                     <CommonForm
                     formControls={recruiterOnboardFormControls}
                     buttonText={'Onboard as recruiter'}
                     formData={recruiterFormData}
-                    setFormData={setRecruiterFormData} />
+                    setFormData={setRecruiterFormData}
+                    isBtnDisabled={!handleRecuiterFormValid()} />
                 </TabsContent>
             </Tabs>
         </div>
