@@ -1,9 +1,14 @@
-const {default : mongoose} = require('mongoose');
 
-const connectToDB = async() => {
-    const connectionURL = "mongodb+srv://bhuvantenguria37:SHADOW01111@shadowportal.ajhsudz.mongodb.net/"
 
-    mongoose.connect(connectionURL).then(() => console.log("Atlas Database to system is connected Sucessfully ! ")).catch((e) => console.log("le bhai yeh error bhi aagya !"+e))
-}
+const { default: mongoose } = require("mongoose");
+
+const connectToDB = async () => {
+  const connectionURL = process.env.MONGODB_URL;
+
+  mongoose
+    .connect(connectionURL)
+    .then(() => console.log("jon board database connection is successfull"))
+    .catch((error) => console.log(error));
+};
 
 export default connectToDB;
