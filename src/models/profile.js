@@ -1,6 +1,8 @@
+import connectToDB from '@/database';
+
 const { membershipPlans } = require('@/utils');
 const { default: mongoose } = require('mongoose');
-
+connectToDB();
 const ProfileSchema = new mongoose.Schema({
   userId: String,
   role: String,

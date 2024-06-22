@@ -6,7 +6,7 @@ import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import Link from "next/link";
 import { UserButton } from "@clerk/nextjs";
 
-function Header({ user }) {
+function Header({ user , profileInfo }) {
   console.log(!user);
 
   const menuItems = [
@@ -33,7 +33,7 @@ function Header({ user }) {
     {
       label: 'Activity',
       path: '/activity',
-      show: user,
+      show: profileInfo?.role === 'candidate',
     },
     {
       label: 'Membership',
