@@ -1,8 +1,6 @@
-import connectToDB from '@/database';
+const mongoose = require('mongoose');
 
-const { membershipPlans } = require('@/utils');
-const { default: mongoose } = require('mongoose');
-connectToDB();
+// Define the schema
 const ProfileSchema = new mongoose.Schema({
   userId: String,
   role: String,
@@ -14,7 +12,7 @@ const ProfileSchema = new mongoose.Schema({
   recruiterInfo: {
     name: String,
     companyName: String,
-    companyrole: String,
+    companyRole: String,
   },
   candidateInfo: {
     name: String,
@@ -35,6 +33,11 @@ const ProfileSchema = new mongoose.Schema({
   },
 });
 
-const Profile = mongoose.models.Profile || mongoose.model('Profile', ProfileSchema);
+// Clear the model from the cache if it exists (development environment only)
+// if (mongoose.connection.models['Profile']) {
+//   delete mongoose.connection.models['Profile'];
+// }
 
+// Define the model
+const Profile = mongoose.models.Profile || mongoose.model('Profile', ProfileSchema);
 export default Profile;

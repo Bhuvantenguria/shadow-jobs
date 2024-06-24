@@ -1,6 +1,6 @@
 " use server "
 
-import connectToDB from "@/database"
+import connectToDB from "@/database/index"
 import Profile from "@/models/profile";
 import { revalidatePath } from "next/cache";
 

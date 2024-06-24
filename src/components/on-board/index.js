@@ -8,7 +8,7 @@ import { createProfile } from "@/actions";
 import { useUser } from "@clerk/nextjs";
 
 function OnBoard(){
-    const [currentTab , setCurrentTab] = useState('candidate');
+    const [currentTab , setCurrentTab] = useState('recruiter');
     const [recruiterFormData, setRecruiterFormData] = useState(initialRecruiterFormData);
     const [candidateFormData, setCandidateFormData] = useState(initialCandidateFormData);
     const currentAuthUser = useUser();
@@ -16,6 +16,7 @@ function OnBoard(){
     // console.log(user);
     function handleChange(val){
         setCurrentTab(val);
+        console.log(currentTab);
     }
     function handleRecuiterFormValid() {
         return (
@@ -48,7 +49,7 @@ function OnBoard(){
                     <div className="flex items-baseline justify-between border-b pb-6 pt-24 " >
                         <h1 className="text-4xl font-bold tracking-light text-gray-900 ">Welcome to Onboarding</h1>
                         <TabsList>
-                            <TabsTrigger value = "candidate">Candidate</TabsTrigger>
+                            <TabsTrigger value = "candidate" >Candidate</TabsTrigger>
                             <TabsTrigger value = "recruiter">Recruiter</TabsTrigger>
                         </TabsList>
                     </div>
