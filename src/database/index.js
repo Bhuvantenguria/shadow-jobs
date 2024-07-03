@@ -1,4 +1,3 @@
-
 const { default: mongoose } = require("mongoose");
 
 const connectToDB = async () => {
@@ -6,7 +5,7 @@ const connectToDB = async () => {
 
   mongoose
     .connect(connectionURL)
-    .then(() => console.log("job board database connection is successfull"))
+    .then(() => console.log("jon board database connection is successfull"))
     .catch((error) => console.log(error));
 };
 
