@@ -122,7 +122,7 @@ function OnBoard() {
             formControls={candidateOnboardFormControls}
             buttonText={"Onboard as candidate"}
             handleFileChange={handleFileChange}
-            isBtnDisabled={!handleCandidateFormValid()}
+            isBtnDisabled={handleCandidateFormValid()}
           />
         </TabsContent>
         <TabsContent value="recruiter">
