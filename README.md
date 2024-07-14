@@ -4,6 +4,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Tech Stack
 
+-> NextJs for fast browsing interaction for users.
 -> Stripe for payment gateway
 -> Supabase to store imgaes and candidate resume.
 
