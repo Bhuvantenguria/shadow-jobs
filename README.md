@@ -1,22 +1,23 @@
-# Shaow Job Portal for Recruiter and Candidate
+
+# Shadow Job Portal for Recruiter and Candidate
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Tech Stack
 
--> NextJs for fast browsing interaction for users.
--> Stripe for payment gateway
--> Supabase to store imgaes and candidate resume.
+- **Next.js** for fast browsing interaction for users.
+- **Stripe** for payment gateway.
+- **Supabase** to store images and candidate resumes.
 
 ## Getting Started
 
-First, download all dependencies: 
+First, download all dependencies:
 
 ```bash
 npm i
 ```
 
-First, run the development server:
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -48,3 +49,5 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+**Deployment Link:** [Shadow Jobs](https://shadow-jobs.vercel.app/)
