@@ -7,7 +7,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 - **Next.js** for fast browsing interaction for users.
 - **Stripe** for payment gateway.
-- **Supabase** to store images and candidate resumes.
+- **Supabase** to store images and candidate resumes .
 
 ## Getting Started
 
