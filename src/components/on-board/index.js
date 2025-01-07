@@ -125,7 +125,7 @@ function OnBoard() {
             isBtnDisabled={handleCandidateFormValid()}
           />
         </TabsContent>
-        <TabsContent value="recruiter">
+        <TabsContent value="recruiterc">
           <CommonForm
             formControls={recruiterOnboardFormControls}
             buttonText={"Onboard as recruiter"}
