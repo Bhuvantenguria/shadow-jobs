@@ -160,7 +160,6 @@ export const postNewJobFormControls = [
     name: "companyName",
     placeholder: "Company Name",
     componentType: "input",
-    disabled: true,
   },
   {
     label: "Title",

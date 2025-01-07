@@ -12,10 +12,7 @@ import Link from "next/link";
 function PostNewJob({ profileInfo, user, jobList }) {
   console.log(jobList, "jobList");
   const [showJobDialog, setShowJobDialog] = useState(false);
-  const [jobFormData, setJobFormData] = useState({
-    ...initialPostNewJobFormData,
-    companyName: profileInfo?.recruiterInfo?.companyName,
-  });
+  const [jobFormData, setJobFormData] = useState(initialPostNewJobFormData);
 
   const { toast } = useToast();
 
@@ -47,10 +44,7 @@ function PostNewJob({ profileInfo, user, jobList }) {
       "/jobs"
     );
 
-    setJobFormData({
-      ...initialPostNewJobFormData,
-      companyName: profileInfo?.recruiterInfo?.companyName,
-    });
+    setJobFormData(initialPostNewJobFormData);
     setShowJobDialog(false);
   }
 
@@ -66,10 +60,7 @@ function PostNewJob({ profileInfo, user, jobList }) {
         open={showJobDialog}
         onOpenChange={() => {
           setShowJobDialog(false);
-          setJobFormData({
-            ...initialPostNewJobFormData,
-            companyName: profileInfo?.recruiterInfo?.companyName,
-          });
+          setJobFormData(initialPostNewJobFormData);
         }}
       >
         <DialogContent className="sm:max-w-screen-md h-[600px] overflow-auto">

@@ -31,9 +31,10 @@ function CandidateJobCard({ jobItem, profileInfo, jobApplications }) {
         title: "You can apply max 2 jobs.",
         description: "Please opt for membership to apply for more jobs",
       });
+      
       return;
     }
-
+    // console.log(jobItem.applyLink)
     await createJobApplicationAction(
       {
         recruiterUserID: jobItem?.recruiterId,
@@ -44,9 +45,10 @@ function CandidateJobCard({ jobItem, profileInfo, jobApplications }) {
         jobID: jobItem?._id,
         jobAppliedDate: new Date().toLocaleDateString(),
       },
-      "/jobs"
+      "\jobs"
     );
     setShowJobDetailsDrawer(false);
+    window.location.href = jobItem?.location;
   }
 
   return (

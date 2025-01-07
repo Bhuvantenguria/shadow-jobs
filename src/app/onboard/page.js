@@ -12,7 +12,7 @@ async function OnBoardPage() {
 
   if (profileInfo?._id) {
     if (profileInfo?.role === "recruiter" && !profileInfo.isPremiumUser)
-      redirect("/membership");
+      redirect("/jobs");
     else redirect("/");
   } else return <OnBoard />;
 }
