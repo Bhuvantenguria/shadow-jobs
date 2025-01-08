@@ -60,8 +60,8 @@ function CandidateJobCard({ jobItem, profileInfo, jobApplications }) {
         {jobApplications.findIndex((item) => item.jobID === jobItem?._id) === -1 && (
           <CommonCard
             icon={<JobIcon />}
-            title={jobItem?.title}
-            description={jobItem?.companyName}
+            title={jobItem?.companyName}
+            description={jobItem?.title}
             footerContent={
               <Button
                 onClick={() => setShowJobDetailsDrawer(true)}
