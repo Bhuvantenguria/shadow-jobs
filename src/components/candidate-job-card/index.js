@@ -72,7 +72,6 @@ function CandidateJobCard({ jobItem, profileInfo, jobApplications }) {
             }
           />
         )}
-
         <DrawerContent className="p-6">
           <DrawerHeader className="px-0">
             <div className="flex justify-between">
@@ -108,13 +107,11 @@ function CandidateJobCard({ jobItem, profileInfo, jobApplications }) {
           </DrawerHeader>
           <DrawerDescription className="text-2xl dark:text-white  font-medium text-gray-600">
             {jobItem?.description}
-            <span className="text-xl dark:text-white  ml-4 font-normal text-gray-500">
-              {jobItem?.location}
-            </span>
+            
           </DrawerDescription>
           <div className="w-[150px] mt-6 flex justify-center dark:bg-white  items-center h-[40px] bg-black rounded-[4px]">
             <h2 className="text-xl font-bold dark:text-black  text-white">
-              {jobItem?.type} Time
+              {jobItem?.type}
             </h2>
           </div>
           <h3 className="text-2xl font-medium text-black mt-3">
@@ -135,4 +132,4 @@ function CandidateJobCard({ jobItem, profileInfo, jobApplications }) {
   );
 }
 
-export default CandidateJobCard;
+export default CandidateJobCard; 
