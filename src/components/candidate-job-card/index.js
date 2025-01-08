@@ -15,17 +15,17 @@ import { Button } from "../ui/button";
 import { createJobApplicationAction } from "@/actions";
 import { useToast } from "../ui/use-toast";
 
-function CandidateJobCard({ jobs, profileInfo, jobApplications }) {
+function CandidateJobCard({ jobs = [], profileInfo, jobApplications }) {
   const [showJobDetailsDrawer, setShowJobDetailsDrawer] = useState(false);
   const [selectedJob, setSelectedJob] = useState(null);
   const { toast } = useToast();
 
   // Reverse and filter jobs
   const filteredJobs = jobs
-    .filter((jobItem) => 
+    .filter((jobItem) =>
       !jobApplications.find((application) => application.jobID === jobItem?._id)
     )
-    .reverse(); // Reverse the order of jobs
+    .reverse();
 
   async function handleJobApply(jobItem) {
     if (!profileInfo?.isPremiumUser && jobApplications.length >= 2) {
