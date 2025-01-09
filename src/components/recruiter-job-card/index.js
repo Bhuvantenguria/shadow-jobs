@@ -18,7 +18,8 @@ function RecruiterJobCard({ jobItem, jobApplications }) {
     <div>
       <CommonCard
         icon={<JobIcon />}
-        title={jobItem?.title}
+        title={jobItem?.companyName}
+        description = {jobItem?.title}
         footerContent={
           <Button
             onClick={() => setShowApplicantsDrawer(true)}
